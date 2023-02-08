@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+@font-face {
+    font-family: "Itim";
+    src: url("../fonts/Itim-Regular.ttf") format('truetype');
+}
+
+* {
+	font-family: 'Itim';
+	background-color: #2a3749;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+div, section {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.bookTitle {
+    font-style: italic;
+}
+
+.a:hover { 
+    color: red;
+  }
