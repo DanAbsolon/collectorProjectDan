@@ -2,9 +2,9 @@
 
 require '../functions.php';
 
-use PHPUnit\Framework\Assert;
+use PHPUnit\Framework\TestCase;
 
-class Functions extends Assert
+class TestDisplayBooks extends TestCase
 {
 	public function testSuccessDisplayBooks()
 	{
