@@ -21,9 +21,10 @@ $books = getAllBooks($booksDb);
 </head>
 <body>
     <h1 tabindex='0'>a bookshelf</h1>
+    <div class="container-for-whole-display">
     <?php echo displayBooks($books);
     ?>
-    <br id="extra line to prevent display touching end of page"/>
+    </div>
 </body>
 </html>
 

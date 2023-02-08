@@ -28,6 +28,6 @@ img {
     width: 125px;
 }
 
-a:hover {
-    color: red;
+.container-for-whole-display {
+    border-bottom: 16px;
 }
