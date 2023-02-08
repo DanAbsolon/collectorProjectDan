@@ -6,8 +6,8 @@
 }
 
 * {
-	font-family: 'Itim';
-	background-color: #2a3749;
+    font-family: 'Itim';
+    background-color: #2a3749;
     color: white;
 }
 
@@ -15,15 +15,19 @@ h1 {
     text-align: center;
 }
 
-div, section {
-    padding-left: 15%;
-    padding-right: 15%;
+section {
+    padding-left: 12%;
+    padding-right: 12%;
 }
 
 .bookTitle {
     font-style: italic;
 }
 
-.a:hover { 
+img {
+    width: 125px;
+}
+
+a:hover {
     color: red;
-  }
+}
