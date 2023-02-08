@@ -2,14 +2,14 @@
 
 require '../functions.php';
 
-use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Assert;
 
-class Functions extends TestCase
+class Functions extends Assert
 {
 	public function testSuccessDisplayBooks()
 	{
-		$example = [
-            'authorFirstName' => 'authorFirstName', 
+        $example = [
+            ['authorFirstName' => 'authorFirstName', 
             'authorSecondName' => 'authorSecondName', 
             'bookTitle' => 'bookTitle', 
             'textType' => 'textType',
@@ -20,7 +20,7 @@ class Functions extends TestCase
             'languageWrittenIn' => 'languageWrittenIn',
             'subjectMatter' => 'subjectMatter',
             'link'=>'link',
-            'extra'=>'extra'
+            'extra'=>'#']
         ];
         $expectedOutput = "<section tabindex='0'>"
         . "<h2>" 
@@ -30,7 +30,7 @@ class Functions extends TestCase
         . 'keyQuote' 
         . "&#8221</p>"
         . "<p tabindex='0'><span class='bookTitle'>" 
-        . 'bookTitle' 
+        . 'bookTitle'
         . "</span> is a " 
         . 'textType' 
         . " of the "
@@ -43,17 +43,19 @@ class Functions extends TestCase
         . " in " 
         . 'languageWrittenIn' 
         . " and published in "
-        . 'yearPublished'
+        . 'yearPublished' 
         . ". "
         . 'authorSecondName'
         . "'s" 
         . " inspiration for the "
         . 'textType' 
         . " was "
-        . 'authorInspiration'
+        . 'authorInspiration' 
         . ".</p>"
-        . "<a class='goodreadsLink' href='link' target='_blank'><i class='fab fa-goodreads'></i></a>";
+        . "<img src=# alt='author image'>"
+        . "<p><a class='good-reads-link' href=link target='_blank'><i class='fab fa-goodreads'></i></a></p>"
+        . "</section>";
         $actualOutput = displayBooks($example);
         $this->assertEquals($expectedOutput, $actualOutput);
-	}
+    }
 }
