@@ -22,7 +22,11 @@ $books = getAllBooks($booksDb);
 <body>
     <h1 tabindex='0'>a bookshelf</h1>
     <div class="container-for-whole-display">
-    <?php echo displayBooks($books);
+    <?php try {
+        echo displayBooks($books);
+    } catch (Exception $exception) {
+        error_log($exception->getMessage() . "\n", 3, 'serverlog.log');
+    }
     ?>
     </div>
 </body>
