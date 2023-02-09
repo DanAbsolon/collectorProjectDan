@@ -65,7 +65,6 @@ function displayBooks($books) {
             . $book['authorInspiration'] 
             . ".</p>"
             . "<img src=$image alt='author image'>"
-            . "<p><a class='good-reads-link' href=$link target='_blank'><i class='fab fa-goodreads'></i></a></p>"
             . "</section>";
         } else {
             throw new Exception('It appears that one or more of the fields entered are null or empty in the database.');

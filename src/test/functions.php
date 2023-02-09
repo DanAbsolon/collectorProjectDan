@@ -52,16 +52,14 @@ class functions extends TestCase
         . 'authorInspiration' 
         . ".</p>"
         . "<img src=# alt='author image'>"
-        . "<p><a class='good-reads-link' href=link target='_blank'><i class='fab fa-goodreads'></i></a></p>"
+        // . "<p><a class='good-reads-link' href=link target='_blank'><i class='fab fa-goodreads'></i></a></p>"
         . "</section>";
         $actualOutput = displayBooks($example);
         $this->assertEquals($expectedOutput, $actualOutput);
     }
     public function testFailureEmptyArrayDisplayBooks() 
     {
-        $example = [
-            []
-        ];
+        $example = [[]];
         $this->expectException(Exception::class);
         displayBooks($example); 
     }
