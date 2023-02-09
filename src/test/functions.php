@@ -18,7 +18,6 @@ class functions extends TestCase
             'authorInspiration' => 'authorInspiration',
             'keyQuote' => 'keyQuote',
             'languageWrittenIn' => 'languageWrittenIn',
-            'link'=>'link',
             'extra'=>'#']
         ];
         $expectedOutput = "<section tabindex='0'>"
@@ -225,24 +224,6 @@ class functions extends TestCase
         $this->expectException(Exception::class);
         displayBooks($example); 
     }
-    public function testFailureNullLinkDisplayBooks() 
-    {
-        $example = [
-            ['authorFirstName' => 'authorFirstName', 
-            'authorSecondName' => 'authorSecondName', 
-            'bookTitle' => 'bookTitle', 
-            'textType' => 'textType',
-            'genre' => 'genre',
-            'yearPublished' => 'yearPublished',
-            'authorInspiration' => 'authorInspiration',
-            'keyQuote' => 'keyQuote',
-            'languageWrittenIn' => 'languageWrittenIn',
-            'link'=>null,
-            'extra'=>'#']
-        ];
-        $this->expectException(Exception::class);
-        displayBooks($example); 
-    }
     public function testFailureNullExtraDisplayBooks() 
     {
         $example = [
@@ -418,24 +399,6 @@ class functions extends TestCase
             'keyQuote' => 'keyQuote',
             'languageWrittenIn' => '',
             'link'=>'link',
-            'extra'=>'extra']
-        ];
-        $this->expectException(Exception::class);
-        displayBooks($example); 
-    }
-    public function testFailureEmptyLinkDisplayBooks() 
-    {
-        $example = [
-            ['authorFirstName' => 'authorFirstName', 
-            'authorSecondName' => 'authorSecondName', 
-            'bookTitle' => 'bookTitle', 
-            'textType' => 'textType',
-            'genre' => 'genre',
-            'yearPublished' => 'yearPublished',
-            'authorInspiration' => 'authorInspiration',
-            'keyQuote' => 'keyQuote',
-            'languageWrittenIn' => 'languageWrittenIn',
-            'link'=>'',
             'extra'=>'extra']
         ];
         $this->expectException(Exception::class);
