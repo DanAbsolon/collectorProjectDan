@@ -4,9 +4,8 @@ function displayBooks($books) {
     $htmlOutput = ''; 
     foreach ($books as $book) {
         if (isset($book['authorFirstName']) 
-        && isset($book['authorFirstName'])
+        && isset($book['authorSecondName'])
         && isset($book['bookTitle'])
-        && isset($book['authorFirstName'])
         && isset($book['textType'])
         && isset($book['genre'])
         && isset($book['yearPublished'])
@@ -15,7 +14,19 @@ function displayBooks($books) {
         && isset($book['keyQuote'])
         && isset($book['languageWrittenIn'])
         && isset($book['link'])
-        && isset($book['extra'])) {
+        && isset($book['extra']) 
+        && $book['authorFirstName']
+        && $book['authorSecondName']
+        && $book['bookTitle']
+        && $book['textType']
+        && $book['genre']
+        && $book['yearPublished']
+        && $book['authorInspiration']
+        && $book['authorFirstName']
+        && $book['keyQuote']
+        && $book['languageWrittenIn']
+        && $book['link']
+        && $book['extra']) {
             if (substr($book['authorSecondName'], -1) == "s") {
                 $possessiveMarker = "'";
             } else {
@@ -57,11 +68,7 @@ function displayBooks($books) {
             . "<p><a class='good-reads-link' href=$link target='_blank'><i class='fab fa-goodreads'></i></a></p>"
             . "</section>";
         } else {
-            throw new Exception('It appears that one or more of the fields for '
-            . $book['bookTitle']
-            . ', id ' 
-            . $book['id'] 
-            . ', are null or empty in the database.');
+            throw new Exception('It appears that one or more of the fields entered are null or empty in the database.');
         }
     }
     return $htmlOutput;
